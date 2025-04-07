@@ -25,6 +25,8 @@ jobs:
       uses: blackduck-inc/black-duck-security-scan@v2.0.0
       env:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+        NODE_TLS_REJECT_UNAUTHORIZED: 0
+        BLACKDUCK_TRUST_CERT: true
       with:
         blackducksca_url: ${{ vars.BLACKDUCKSCA_URL }}
         blackducksca_token: ${{ secrets.BLACKDUCKSCA_TOKEN }}
